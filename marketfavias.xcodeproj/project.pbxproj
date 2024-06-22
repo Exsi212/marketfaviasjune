@@ -11,6 +11,14 @@
 		CEB0A5DA2C2792200092EB60 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB0A5D92C2792200092EB60 /* ContentView.swift */; };
 		CEB0A5DC2C2792210092EB60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEB0A5DB2C2792210092EB60 /* Assets.xcassets */; };
 		CEB0A5DF2C2792210092EB60 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEB0A5DE2C2792210092EB60 /* Preview Assets.xcassets */; };
+		CEB0A5E72C27925C0092EB60 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB0A5E62C27925C0092EB60 /* Color.swift */; };
+		CEB0A5EA2C2792B00092EB60 /* PostDataApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB0A5E92C2792B00092EB60 /* PostDataApi.swift */; };
+		CEB0A5EC2C2792C80092EB60 /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB0A5EB2C2792C80092EB60 /* PostModel.swift */; };
+		CEB0A5EF2C2792F30092EB60 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB0A5EE2C2792F30092EB60 /* Api.swift */; };
+		CEB0A5F12C27930C0092EB60 /* PostApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB0A5F02C27930C0092EB60 /* PostApi.swift */; };
+		CEB0A5F32C2793270092EB60 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB0A5F22C2793270092EB60 /* UserService.swift */; };
+		CEB0A5F62C2793760092EB60 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB0A5F52C2793760092EB60 /* AuthView.swift */; };
+		CEB0A5F82C2793AD0092EB60 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB0A5F72C2793AD0092EB60 /* MainView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +27,14 @@
 		CEB0A5D92C2792200092EB60 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CEB0A5DB2C2792210092EB60 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CEB0A5DE2C2792210092EB60 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		CEB0A5E62C27925C0092EB60 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		CEB0A5E92C2792B00092EB60 /* PostDataApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDataApi.swift; sourceTree = "<group>"; };
+		CEB0A5EB2C2792C80092EB60 /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
+		CEB0A5EE2C2792F30092EB60 /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
+		CEB0A5F02C27930C0092EB60 /* PostApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostApi.swift; sourceTree = "<group>"; };
+		CEB0A5F22C2793270092EB60 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		CEB0A5F52C2793760092EB60 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
+		CEB0A5F72C2793AD0092EB60 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +67,11 @@
 		CEB0A5D62C2792200092EB60 /* marketfavias */ = {
 			isa = PBXGroup;
 			children = (
+				CEB0A5F42C27933D0092EB60 /* View */,
+				CEB0A5ED2C2792DF0092EB60 /* Service and Api */,
+				CEB0A5E82C2792910092EB60 /* Models */,
+				CEB0A5E52C2792410092EB60 /* Assetss */,
 				CEB0A5D72C2792200092EB60 /* marketfaviasApp.swift */,
-				CEB0A5D92C2792200092EB60 /* ContentView.swift */,
 				CEB0A5DB2C2792210092EB60 /* Assets.xcassets */,
 				CEB0A5DD2C2792210092EB60 /* Preview Content */,
 			);
@@ -65,6 +84,43 @@
 				CEB0A5DE2C2792210092EB60 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		CEB0A5E52C2792410092EB60 /* Assetss */ = {
+			isa = PBXGroup;
+			children = (
+				CEB0A5E62C27925C0092EB60 /* Color.swift */,
+			);
+			path = Assetss;
+			sourceTree = "<group>";
+		};
+		CEB0A5E82C2792910092EB60 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CEB0A5E92C2792B00092EB60 /* PostDataApi.swift */,
+				CEB0A5EB2C2792C80092EB60 /* PostModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CEB0A5ED2C2792DF0092EB60 /* Service and Api */ = {
+			isa = PBXGroup;
+			children = (
+				CEB0A5EE2C2792F30092EB60 /* Api.swift */,
+				CEB0A5F02C27930C0092EB60 /* PostApi.swift */,
+				CEB0A5F22C2793270092EB60 /* UserService.swift */,
+			);
+			path = "Service and Api";
+			sourceTree = "<group>";
+		};
+		CEB0A5F42C27933D0092EB60 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CEB0A5D92C2792200092EB60 /* ContentView.swift */,
+				CEB0A5F52C2793760092EB60 /* AuthView.swift */,
+				CEB0A5F72C2793AD0092EB60 /* MainView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +193,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEB0A5EF2C2792F30092EB60 /* Api.swift in Sources */,
 				CEB0A5DA2C2792200092EB60 /* ContentView.swift in Sources */,
+				CEB0A5F12C27930C0092EB60 /* PostApi.swift in Sources */,
+				CEB0A5F82C2793AD0092EB60 /* MainView.swift in Sources */,
+				CEB0A5EC2C2792C80092EB60 /* PostModel.swift in Sources */,
+				CEB0A5F32C2793270092EB60 /* UserService.swift in Sources */,
 				CEB0A5D82C2792200092EB60 /* marketfaviasApp.swift in Sources */,
+				CEB0A5EA2C2792B00092EB60 /* PostDataApi.swift in Sources */,
+				CEB0A5E72C27925C0092EB60 /* Color.swift in Sources */,
+				CEB0A5F62C2793760092EB60 /* AuthView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

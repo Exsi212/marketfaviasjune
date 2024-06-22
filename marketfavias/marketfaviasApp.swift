@@ -1,17 +1,17 @@
 //
-//  marketfaviasApp.swift
-//  marketfavias
+//  faviasmarketApp.swift
+//  faviasmarket
 //
-//  Created by Olya on 23.06.2024.
+//  Created by Olya on 17.06.2024.
 //
 
 import SwiftUI
 
 @main
-struct marketfaviasApp: App {
+struct faviasmarketApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+           LoginView()
         }
     }
 }
