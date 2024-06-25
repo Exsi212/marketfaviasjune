@@ -1,8 +1,7 @@
-//
-//  UserModel.swift
-//  marketfavias
-//
-//  Created by Olya on 25.06.2024.
-//
-
 import Foundation
+
+struct UserModel: Codable, Identifiable {
+    var id: Int
+    var name: String
+    var avatarUrl: URL?
+}

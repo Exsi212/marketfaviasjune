@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE13888D2C29FF200075FFD7 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE13888C2C29FF200075FFD7 /* SearchView.swift */; };
+		CE21ED302C2B56CA0078A19A /* CommentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE21ED2F2C2B56CA0078A19A /* CommentModel.swift */; };
+		CE21ED322C2B57C40078A19A /* PostDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE21ED312C2B57C40078A19A /* PostDetailView.swift */; };
+		CE21ED342C2B5D2E0078A19A /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE21ED332C2B5D2E0078A19A /* UserModel.swift */; };
+		CE6D6AC62C284CB1003CF465 /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = CE6D6AC52C284CB1003CF465 /* URLImage */; };
+		CE6D6AC82C284CB1003CF465 /* URLImageStore in Frameworks */ = {isa = PBXBuildFile; productRef = CE6D6AC72C284CB1003CF465 /* URLImageStore */; };
+		CE6D6ACC2C28539D003CF465 /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6D6ACB2C28539D003CF465 /* PostView.swift */; };
 		CEB0A5D82C2792200092EB60 /* marketfaviasApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB0A5D72C2792200092EB60 /* marketfaviasApp.swift */; };
 		CEB0A5DA2C2792200092EB60 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB0A5D92C2792200092EB60 /* ContentView.swift */; };
 		CEB0A5DC2C2792210092EB60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEB0A5DB2C2792210092EB60 /* Assets.xcassets */; };
@@ -22,6 +29,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE13888C2C29FF200075FFD7 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		CE21ED2F2C2B56CA0078A19A /* CommentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentModel.swift; sourceTree = "<group>"; };
+		CE21ED312C2B57C40078A19A /* PostDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailView.swift; sourceTree = "<group>"; };
+		CE21ED332C2B5D2E0078A19A /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		CE6D6ACB2C28539D003CF465 /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
 		CEB0A5D42C2792200092EB60 /* marketfavias.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = marketfavias.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEB0A5D72C2792200092EB60 /* marketfaviasApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = marketfaviasApp.swift; sourceTree = "<group>"; };
 		CEB0A5D92C2792200092EB60 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -42,6 +54,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE6D6AC82C284CB1003CF465 /* URLImageStore in Frameworks */,
+				CE6D6AC62C284CB1003CF465 /* URLImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,6 +113,8 @@
 			children = (
 				CEB0A5E92C2792B00092EB60 /* PostDataApi.swift */,
 				CEB0A5EB2C2792C80092EB60 /* PostModel.swift */,
+				CE21ED2F2C2B56CA0078A19A /* CommentModel.swift */,
+				CE21ED332C2B5D2E0078A19A /* UserModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -119,6 +135,9 @@
 				CEB0A5D92C2792200092EB60 /* ContentView.swift */,
 				CEB0A5F52C2793760092EB60 /* AuthView.swift */,
 				CEB0A5F72C2793AD0092EB60 /* MainView.swift */,
+				CE6D6ACB2C28539D003CF465 /* PostView.swift */,
+				CE13888C2C29FF200075FFD7 /* SearchView.swift */,
+				CE21ED312C2B57C40078A19A /* PostDetailView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -139,6 +158,10 @@
 			dependencies = (
 			);
 			name = marketfavias;
+			packageProductDependencies = (
+				CE6D6AC52C284CB1003CF465 /* URLImage */,
+				CE6D6AC72C284CB1003CF465 /* URLImageStore */,
+			);
 			productName = marketfavias;
 			productReference = CEB0A5D42C2792200092EB60 /* marketfavias.app */;
 			productType = "com.apple.product-type.application";
@@ -167,6 +190,9 @@
 				Base,
 			);
 			mainGroup = CEB0A5CB2C2792200092EB60;
+			packageReferences = (
+				CE6D6AC42C284CB1003CF465 /* XCRemoteSwiftPackageReference "url-image" */,
+			);
 			productRefGroup = CEB0A5D52C2792200092EB60 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -197,12 +223,17 @@
 				CEB0A5DA2C2792200092EB60 /* ContentView.swift in Sources */,
 				CEB0A5F12C27930C0092EB60 /* PostApi.swift in Sources */,
 				CEB0A5F82C2793AD0092EB60 /* MainView.swift in Sources */,
+				CE13888D2C29FF200075FFD7 /* SearchView.swift in Sources */,
+				CE21ED302C2B56CA0078A19A /* CommentModel.swift in Sources */,
 				CEB0A5EC2C2792C80092EB60 /* PostModel.swift in Sources */,
 				CEB0A5F32C2793270092EB60 /* UserService.swift in Sources */,
 				CEB0A5D82C2792200092EB60 /* marketfaviasApp.swift in Sources */,
 				CEB0A5EA2C2792B00092EB60 /* PostDataApi.swift in Sources */,
 				CEB0A5E72C27925C0092EB60 /* Color.swift in Sources */,
+				CE21ED322C2B57C40078A19A /* PostDetailView.swift in Sources */,
 				CEB0A5F62C2793760092EB60 /* AuthView.swift in Sources */,
+				CE21ED342C2B5D2E0078A19A /* UserModel.swift in Sources */,
+				CE6D6ACC2C28539D003CF465 /* PostView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -406,6 +437,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CE6D6AC42C284CB1003CF465 /* XCRemoteSwiftPackageReference "url-image" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dmytro-anokhin/url-image";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.1.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CE6D6AC52C284CB1003CF465 /* URLImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE6D6AC42C284CB1003CF465 /* XCRemoteSwiftPackageReference "url-image" */;
+			productName = URLImage;
+		};
+		CE6D6AC72C284CB1003CF465 /* URLImageStore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE6D6AC42C284CB1003CF465 /* XCRemoteSwiftPackageReference "url-image" */;
+			productName = URLImageStore;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CEB0A5CC2C2792200092EB60 /* Project object */;
 }

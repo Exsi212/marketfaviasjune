@@ -8,6 +8,7 @@ struct MainView: View {
     
     @State private var selectedTab = "Рекомендации"
     @State private var posts: [PostModel] = []
+    @State private var showSearch = false
     private let postApi = PostApi()
     
     var body: some View {
@@ -31,10 +32,13 @@ struct MainView: View {
                         }
                         
                         Button(action: {
-                            // действие для кнопки поиска
+                            showSearch.toggle()
                         }) {
                             Image(systemName: "magnifyingglass")
                                 .foregroundColor(.white)
+                        }
+                        .sheet(isPresented: $showSearch) {
+                            PostSearchView(posts: $posts)
                         }
                     }
                     .padding([.leading, .trailing, .top])
@@ -117,37 +121,30 @@ struct CustomTabPicker: View {
     }
 }
 
-// Представление для отображения каждого поста
-struct PostView: View {
-    var post: PostModel
+// Переименованный SearchView
+struct PostSearchView: View {
+    @Binding var posts: [PostModel]
+    @State private var searchText = ""
+    private let postApi = PostApi()
 
     var body: some View {
         VStack {
-            AsyncImage(url: post.url) { phase in
-                switch phase {
-                case .empty:
-                    ProgressView()
-                case .success(let image):
-                    image.resizable().aspectRatio(contentMode: .fill)
-                case .failure:
-                    Image(systemName: "photo")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 100, height: 100)
-                @unknown default:
-                    EmptyView()
+            TextField("Поиск", text: $searchText, onCommit: {
+                postApi.searchPosts(query: searchText) { fetchedPosts in
+                    print("Загруженные посты (поиск): \(fetchedPosts)") // Вывод в консоль для проверки
+                    self.posts = fetchedPosts
                 }
-            }
-            .frame(minWidth: 0, maxWidth: .infinity, minHeight: 200)
-            .cornerRadius(10)
-            .clipped()
+            })
+            .padding()
+            .background(Color(.systemGray6))
+            .cornerRadius(8)
+            .padding(.horizontal)
 
-            Text(post.title)
-                .foregroundColor(.white)
+            List(posts) { post in
+                Text(post.title) // Выводим только заголовок для примера
+            }
         }
-        .frame(width: (UIScreen.main.bounds.width / 2) - 15, height: 250)
-        .background(Color.black.opacity(0.1))
-        .cornerRadius(10)
+        .navigationBarTitle("Поиск", displayMode: .inline)
     }
 }
 
