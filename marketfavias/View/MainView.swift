@@ -9,6 +9,7 @@ struct MainView: View {
     @State private var selectedTab = "Рекомендации"
     @State private var posts: [PostModel] = []
     @State private var showSearch = false
+    @State private var showNotifications = false
     private let postApi = PostApi()
     
     var body: some View {
@@ -25,10 +26,13 @@ struct MainView: View {
                         Spacer()
                         
                         Button(action: {
-                            // действие для кнопки уведомлений
+                            showNotifications.toggle()
                         }) {
                             Image(systemName: "bell.fill")
                                 .foregroundColor(.white)
+                        }
+                        .sheet(isPresented: $showNotifications) {
+                            NotificationView()
                         }
                         
                         Button(action: {
@@ -51,7 +55,30 @@ struct MainView: View {
                         LazyVGrid(columns: columns, spacing: 10) {
                             if selectedTab == "Рекомендации" {
                                 ForEach(posts) { post in
-                                    PostView(post: post)
+                                    VStack {
+                                        NavigationLink(destination: PostDetailView(post: post)) {
+                                            AsyncImage(url: post.postImage) { phase in
+                                                switch phase {
+                                                case .empty:
+                                                    ProgressView()
+                                                        .frame(height: 150)
+                                                case .success(let image):
+                                                    image
+                                                        .resizable()
+                                                        .aspectRatio(contentMode: .fill)
+                                                        .frame(height: 150)
+                                                        .clipped()
+                                                case .failure:
+                                                    Image(systemName: "photo")
+                                                        .resizable()
+                                                        .frame(width: 150, height: 150)
+                                                @unknown default:
+                                                    EmptyView()
+                                                }
+                                            }
+                                        }
+                                        PostView(post: post)
+                                    }
                                 }
                             } else {
                                 Text("Твои подписки")

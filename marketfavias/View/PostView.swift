@@ -2,6 +2,16 @@ import SwiftUI
 
 struct PostView: View {
     let post: PostModel
+    let postApi = PostApi() // Для добавления функции лайка
+    
+    @State private var liked: Bool
+    @State private var likeCount: Int
+    
+    init(post: PostModel) {
+        self.post = post
+        self._liked = State(initialValue: post.likeInfo?.liked ?? false)
+        self._likeCount = State(initialValue: post.likeInfo?.likeCount ?? 0)
+    }
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -11,17 +21,16 @@ struct PostView: View {
                         switch phase {
                         case .empty:
                             ProgressView()
-                                .frame(height: 150)  // Уменьшаем высоту изображения
+                                .frame(height: 150)
                         case .success(let image):
                             image
                                 .resizable()
-                                .aspectRatio(contentMode: .fill)
-                                .frame(height: 150)  // Уменьшаем высоту изображения
-                                .clipped()  // Обрезаем изображение по границам фрейма
+                                .aspectRatio(contentMode: .fit)
+                                .frame(height: 150)
                         case .failure:
                             Image(systemName: "photo")
                                 .resizable()
-                                .frame(width: 150, height: 150)  // Уменьшаем размеры изображения
+                                .frame(width: 150, height: 150)
                         @unknown default:
                             EmptyView()
                         }
@@ -29,30 +38,36 @@ struct PostView: View {
                 } else {
                     Image(systemName: "photo")
                         .resizable()
-                        .frame(width: 150, height: 150)  // Уменьшаем размеры изображения
+                        .frame(width: 150, height: 150)
                 }
             }
             
             Text(post.title)
                 .font(.headline)
                 .padding(.top, 5)
-                .onTapGesture {
-                    // Добавляем действие нажатия на заголовок
-                    NavigationLink(destination: PostDetailView(post: post)) {
-                        EmptyView()
-                    }
-                    .hidden()
-                }
             
             Text(post.content)
                 .padding(.top, 2)
-                .lineLimit(2)  // Ограничиваем количество строк для контента
             
             HStack {
-                Image(systemName: "heart")
-                Text("\(post.likeInfo?.likeCount ?? 0)")
+                Button(action: {
+                    toggleLike()
+                }) {
+                    Image(systemName: liked ? "heart.fill" : "heart")
+                        .foregroundColor(liked ? .red : .gray)
+                }
+                Text("\(likeCount)")
             }
             .padding(.top, 2)
+        }
+    }
+    
+    private func toggleLike() {
+        postApi.toggleLike(postId: post.id) { success in
+            if success {
+                self.liked.toggle()
+                self.likeCount += self.liked ? 1 : -1
+            }
         }
     }
 }
